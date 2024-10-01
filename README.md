@@ -1,4 +1,4 @@
-# regex-clu
+# regex-util
 
 A command line utility similar to [regex101.com](regex101.com).
 
@@ -39,5 +39,5 @@ pip install -e .
 ## Usage
 
 ```Bash
-regex-clu -h
+regex-util -h
 ```
