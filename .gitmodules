@@ -1,0 +1,9 @@
+[submodule "engines/bru"]
+	path = engines/bru
+	url = https://git.cs.sun.ac.za/rvrg/bru
+[submodule "engines/pcre2-runner"]
+	path = engines/pcre2-runner
+	url = https://github.com/river-martin/pcre2-runner
+[submodule "engines/re2-runner"]
+	path = engines/re2-runner
+	url = https://github.com/river-martin/re2-runner
