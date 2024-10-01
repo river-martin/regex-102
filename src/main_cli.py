@@ -18,14 +18,13 @@ def parse_args():
     )
     return parser.parse_args()
 
-
-if __name__ == "__main__":
+def main():
     args = parse_args()
     import subprocess
 
     match args.engine:
         case "re2":
-            cmd = f"python engines/re2-runner/src/re2_runner.py {args.regex} {args.text} {args.engine_args}"
+            cmd = f"python3 engines/re2-runner/src/re2_runner.py {args.regex} {args.text} {args.engine_args}"
         case "pcre2":
             cmd = f"./engines/pcre2-runner/pcre2_runner {args.regex} {args.text} {args.engine_args}"
         case "bru":
@@ -33,3 +32,6 @@ if __name__ == "__main__":
         case _:
             raise ValueError(f"Unknown engine: {args.engine}")
     subprocess.run(cmd, shell=True)
+
+if __name__ == "__main__":
+    main()

@@ -21,8 +21,16 @@ span = [4, 5] # the start and end positions of the substring captured by the sec
 str = """the substring captured by the second group"""
 ```
 
+## Installation
+
+```Bash
+python3 -m venv env
+source env/bin/activate
+pip install -e .
+```
+
 ## Usage
 
 ```Bash
-python3 src/main.py -h
+regex-clu -h
 ```

@@ -1,0 +1,12 @@
+[build-system]
+requires=['setuptools']
+build-backend='setuptools.build_meta'
+
+[project]
+name='regex-clu'
+version='2024.0.0'
+dependencies=['google-re2']
+requires-python = '>=3.12'
+
+[project.scripts]
+regex-clu = 'main_cli:main'
