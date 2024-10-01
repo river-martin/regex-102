@@ -9,15 +9,15 @@ Match information is output in [TOML](https://toml.io/en/) syntax as follows:
 
 # The zeroth group captures the whole match.
 [match_1.group_0]
-span = [<lower_bound>, <upper_bound>] # the start and end positions of the substring matched
+span = [0, 1] # the start and end positions of the substring matched
 str = """the substring matched"""
 
 [match_1.group_1]
-span = [<lower_bound>, <upper_bound>] # the start and end positions of the substring captured by the first group
+span = [2, 3] # the start and end positions of the substring captured by the first group
 str = """the substring captured by the first group"""
 
 [match_1.group_2]
-span = [<lower_bound>, <upper_bound>] # the start and end positions of the substring captured by the second group
+span = [4, 5] # the start and end positions of the substring captured by the second group
 str = """the substring captured by the second group"""
 ```
 
