@@ -1,12 +1,12 @@
 [submodule "engines/bru"]
 	path = engines/bru
-	url = https://git.cs.sun.ac.za/rvrg/bru
-[submodule "engines/pcre2-runner"]
-	path = engines/pcre2-runner
-	url = https://github.com/river-martin/pcre2-runner
-[submodule "engines/re2-runner"]
-	path = engines/re2-runner
-	url = https://github.com/river-martin/re2-runner
+	url = git@git.cs.sun.ac.za:rvrg/bru.git
 [submodule "engines/java8-runner"]
 	path = engines/java8-runner
 	url = git@github.com:river-martin/java8-runner.git
+[submodule "engines/pcre2-runner"]
+	path = engines/pcre2-runner
+	url = git@github.com:river-martin/pcre2-runner
+[submodule "engines/re2-runner"]
+	path = engines/re2-runner
+	url = git@github.com:river-martin/re2-runner.git
