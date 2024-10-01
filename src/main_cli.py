@@ -33,7 +33,7 @@ def main():
         case "bru":
             cmd = f'{engines_dir}/bru/bin/bru match "{args.regex}" "{args.text}" {args.engine_args} --whole-match-capture'
         case "java8":
-            cmd = f'java -classpath {engines_dir}/java8-runner/ Java8Runner "{args.regex}" "{args.text}" {args.engine_args}'
+            cmd = f'java8 -classpath {engines_dir}/java8-runner/ Java8Runner "{args.regex}" "{args.text}" {args.engine_args}'
         case _:
             raise ValueError(f"Unknown engine: {args.engine}")
     subprocess.run(cmd, shell=True)
