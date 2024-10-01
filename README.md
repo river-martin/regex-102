@@ -25,9 +25,13 @@ str = """the substring captured by the second group"""
 
 ```Bash
 git submodule update --init --recursive
+```
+
+Follow the instructions given in the git submodules to install the dependencies of each runner (engine). Then, build the engines and install the utility with the commands below.
+
+```Bash
 make engines
 python3 -m venv env
-cat engines/java8-runner/env.txt >> env/bin/activate
 source env/bin/activate
 pip install -e .
 ```
