@@ -29,9 +29,9 @@ def main():
         case "re2":
             cmd = f'python3 {engines_dir}/re2-runner/src/re2_runner.py "{args.regex}" "{args.text}" {args.engine_args}'
         case "pcre2":
-            cmd = f'./{engines_dir}/pcre2-runner/pcre2_runner "{args.regex}" "{args.text}" {args.engine_args}'
+            cmd = f'{engines_dir}/pcre2-runner/pcre2_runner "{args.regex}" "{args.text}" {args.engine_args}'
         case "bru":
-            cmd = f'./{engines_dir}/bru/bin/bru ""{args.regex}"" ""{args.text}"" {args.engine_args} --whole-match-capture'
+            cmd = f'{engines_dir}/bru/bin/bru match "{args.regex}" "{args.text}" {args.engine_args} --whole-match-capture'
         case "java8":
             cmd = f'java -classpath {engines_dir}/java8-runner/ Java8Runner "{args.regex}" "{args.text}" {args.engine_args}'
         case _:
