@@ -7,7 +7,7 @@ def parse_args():
     parser.add_argument(
         "engine",
         type=str,
-        choices=["re2", "pcre2", "bru"],
+        choices=["re2", "pcre2", "bru", "java8"],
         help="The regex engine to use",
     )
     parser.add_argument(
@@ -18,20 +18,26 @@ def parse_args():
     )
     return parser.parse_args()
 
+
 def main():
     args = parse_args()
     import subprocess
+    import os
 
+    engines_dir = os.path.abspath(os.path.dirname(__file__)) + "/../engines"
     match args.engine:
         case "re2":
-            cmd = f"python3 engines/re2-runner/src/re2_runner.py {args.regex} {args.text} {args.engine_args}"
+            cmd = f'python3 {engines_dir}/re2-runner/src/re2_runner.py "{args.regex}" "{args.text}" {args.engine_args}'
         case "pcre2":
-            cmd = f"./engines/pcre2-runner/pcre2_runner {args.regex} {args.text} {args.engine_args}"
+            cmd = f'./{engines_dir}/pcre2-runner/pcre2_runner "{args.regex}" "{args.text}" {args.engine_args}'
         case "bru":
-            cmd = f"./engines/bru/bin/bru {args.regex} {args.text} {args.engine_args} --whole-match-capture"
+            cmd = f'./{engines_dir}/bru/bin/bru ""{args.regex}"" ""{args.text}"" {args.engine_args} --whole-match-capture'
+        case "java8":
+            cmd = f'java -classpath {engines_dir}/java8-runner/ Java8Runner "{args.regex}" "{args.text}" {args.engine_args}'
         case _:
             raise ValueError(f"Unknown engine: {args.engine}")
     subprocess.run(cmd, shell=True)
+
 
 if __name__ == "__main__":
     main()
