@@ -7,3 +7,6 @@
 [submodule "engines/re2-runner"]
 	path = engines/re2-runner
 	url = https://github.com/river-martin/re2-runner
+[submodule "engines/java8-runner"]
+	path = engines/java8-runner
+	url = git@github.com:river-martin/java8-runner.git
