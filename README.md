@@ -24,7 +24,10 @@ str = """the substring captured by the second group"""
 ## Installation
 
 ```Bash
+git submodule update --init --recursive
+make engines
 python3 -m venv env
+cat engines/java8-runner/env.txt >> env/bin/activate
 source env/bin/activate
 pip install -e .
 ```
