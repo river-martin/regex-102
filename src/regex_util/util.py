@@ -1,6 +1,7 @@
 import subprocess
 import os
 
+ENGINES = ["re2", "pcre2", "bru", "java8"]
 
 def run(engine: str, regex: str, text: str, engine_args: str) -> str:
     """
@@ -14,13 +15,13 @@ def run(engine: str, regex: str, text: str, engine_args: str) -> str:
     engines_dir = os.path.abspath(os.path.dirname(__file__)) + "/../../engines"
     match engine:
         case "re2":
-            cmd = f'python3 {engines_dir}/re2-runner/src/re2_runner.py "{regex}" "{text}" {engine_args}'
+            cmd = f'python3 {engines_dir}/re2-runner/src/re2_runner.py "{regex}" \'{text}\' {engine_args}'
         case "pcre2":
-            cmd = f'{engines_dir}/pcre2-runner/pcre2_runner "{regex}" "{text}" {engine_args}'
+            cmd = f'{engines_dir}/pcre2-runner/pcre2_runner "{regex}" \'{text}\' {engine_args}'
         case "bru":
-            cmd = f'{engines_dir}/bru/bin/bru match "{regex}" "{text}" {engine_args} --whole-match-capture'
+            cmd = f'{engines_dir}/bru/bin/bru match "{regex}" \'{text}\' {engine_args} --whole-match-capture'
         case "java8":
-            cmd = f'java8 -classpath {engines_dir}/java8-runner/ Java8Runner "{regex}" "{text}" {engine_args}'
+            cmd = f'java8 -classpath {engines_dir}/java8-runner/ Java8Runner "{regex}" \'{text}\' {engine_args}'
         case _:
             raise ValueError(f"Unknown engine: {engine}")
     return subprocess.getoutput(cmd)
