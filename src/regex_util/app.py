@@ -6,7 +6,11 @@ def parse_args():
 
     parser = argparse.ArgumentParser()
     parser.add_argument("regex", type=str, help="The pattern")
-    parser.add_argument("text", type=str, help="The text to search")
+    parser.add_argument(
+        "input_file_path",
+        type=str,
+        help="A path to a file containing the text to search",
+    )
     parser.add_argument(
         "engine",
         type=str,
@@ -24,8 +28,9 @@ def parse_args():
 
 def main():
     args = parse_args()
-    output = run(args.engine, args.regex, args.text, args.engine_args)
+    output = run(args.engine, args.regex, args.input_file_path, args.engine_args)
     print(output)
+
 
 if __name__ == "__main__":
     main()
