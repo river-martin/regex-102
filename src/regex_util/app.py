@@ -5,7 +5,7 @@ def parse_args():
     import argparse
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("regex", type=str, help="The pattern")
+    parser.add_argument("regex_file_path", type=str, help="A path to the file containing the regex pattern")
     parser.add_argument(
         "input_file_path",
         type=str,
@@ -28,7 +28,7 @@ def parse_args():
 
 def main():
     args = parse_args()
-    output = run(args.engine, args.regex, args.input_file_path, args.engine_args)
+    output = run(args.engine, args.regex_file_path, args.input_file_path, args.engine_args)
     print(output)
 
 
