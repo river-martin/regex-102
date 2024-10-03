@@ -32,7 +32,7 @@ def parse_args():
 
 def main():
     args = parse_args()
-    output = run(
+    exitcode, output = run(
         args.engine, args.regex_file_path, args.input_file_path, args.engine_args
     )
     print(output)
