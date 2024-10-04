@@ -18,9 +18,9 @@ def run(
     engines_dir = os.path.abspath(os.path.dirname(__file__)) + "/../../engines"
     match engine:
         case "re2":
-            cmd = f"{engines_dir}/re2-runner/re2_runner {regex_file_path} {input_file_path} {engine_args}"
+            cmd = f"{engines_dir}/re2-runner/build/re2-runner {regex_file_path} {input_file_path} {engine_args}"
         case "pcre2":
-            cmd = f"{engines_dir}/pcre2-runner/pcre2_runner {regex_file_path} {input_file_path} {engine_args}"
+            cmd = f"{engines_dir}/pcre2-runner/pcre2-runner {regex_file_path} {input_file_path} {engine_args}"
         case "bru":
             cmd = f"{engines_dir}/bru/bin/bru match {regex_file_path} {input_file_path} {engine_args} --whole-match-capture"
         case "java8":

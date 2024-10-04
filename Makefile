@@ -2,13 +2,13 @@ engines:
 	make -C engines/java8-runner
 	make -C engines/pcre2-runner
 	make -C engines/bru
-	cmake engines/re2-runner
-	cmake --build engines/re2-runner
+	mkdir -p engines/re2-runner/build && cd engines/re2-runner/build && cmake -DABSL_ENABLE_INSTALL=ON .. && cmake --build . 
 
 clean:
 	make -C engines/java8-runner clean
 	make -C engines/pcre2-runner clean
 	make -C engines/bru clean
-	make -C engines/re2-runner clean
+	rm -f engines/re2-runner/build/CMakeCache.txt
+	rm -f engines/re2-runner/build/re2-runner
 
 .PHONY: engines clean
