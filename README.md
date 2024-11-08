@@ -39,5 +39,5 @@ pip install -e .
 ## Usage
 
 ```Bash
-regex-util -h
+regex-102 -h
 ```
