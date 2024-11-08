@@ -1,4 +1,4 @@
-# regex-util
+# regex-102
 
 A command line utility similar to [regex101.com](regex101.com).
 
