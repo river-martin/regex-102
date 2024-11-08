@@ -9,7 +9,7 @@ dependencies = ['google-re2']
 requires-python = '>=3.12'
 
 [project.scripts]
-regex-util = 'regex_util:app.main'
+regex-102 = 'regex_util:app.main'
 
 [tool.setuptools.packages.find]
 where = ["src"]
