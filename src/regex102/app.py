@@ -1,4 +1,5 @@
 from .util import run
+import os
 
 
 def parse_args():
@@ -33,7 +34,11 @@ def parse_args():
 def main():
     args = parse_args()
     exitcode, output = run(
-        args.engine, args.regex_file_path, args.input_file_path, args.engine_args
+        args.engine,
+        args.regex_file_path,
+        args.input_file_path,
+        args.engine_args,
+        os.path.abspath(os.path.dirname(__file__)) + "/../regex-102/engines",
     )
     print(output)
 
